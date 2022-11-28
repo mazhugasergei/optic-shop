@@ -186,7 +186,7 @@ const App = () => {
           setPreviousSlide(currentSlide)
           doAnimation()
         }, transition))
-        setIsCalledToFalseTimeoutID(setTimeout(()=>{setIsCalled(false)}, transition))
+        setIsCalledToFalseTimeoutID(setTimeout(()=>{setIsCalled(false)}, transition*2))
       }
       // change left nav bullet color
       document.querySelectorAll('aside input')[currentSlide].checked = true
