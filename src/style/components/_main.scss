@@ -96,21 +96,29 @@
 
   .num-cont{
     overflow: hidden;
-    height: min(10vw, 2.5rem);
+    // height: min(10vw, 2.5rem);
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    @media (min-width: 480px){ margin-block-start: 8vw; }
+    margin-bottom: 4vw;
+    @media (min-width: 480px){
+      margin-top: 8vw;
+      margin-bottom: 1.3vw;
+    }
     @media (min-width: 780px){
-      margin-block-start: -2vw;
-      margin-block-end: 2vw;
+      margin-top: -2vw;
+      margin-bottom: 3.2vw;
     }
     @media (min-width: 1140px){
-      margin-block-start: -1.7rem;
-      margin-block-end: 1.7rem;
+      margin-top: -1.7rem;
+      margin-bottom: min(2.6vw, 2.5rem);
     }
     .text{
+      display: flex;
+      flex-flow: column;
+      gap: 1rem;
       span{
+        display: block;
         font-size: min(3vw, .75rem);
         font-weight: 700;
         letter-spacing: 1px;
