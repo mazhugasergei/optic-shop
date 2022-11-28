@@ -215,7 +215,7 @@ const App = () => {
             <a href="/">About</a>
             <a href="/">Contact</a>
           </nav>
-          <a className="logo" href="/"><img src="/images/logo.svg" alt="logo"/></a>
+          <a className="logo" href="/"><img src="./images/logo.svg" alt="logo"/></a>
         </div>
       </header>
 
@@ -234,11 +234,11 @@ const App = () => {
             </div>
           </div>
           <div className="images">
-            <img src="/images/glasses/black.webp"/>
-            <img src="/images/glasses/blue.webp"/>
-            <img src="/images/glasses/red.webp"/>
-            <img src="/images/glasses/green.webp"/>
-            <img src="/images/glasses/yellow.webp"/>
+            <img src="./images/glasses/black.webp"/>
+            <img src="./images/glasses/blue.webp"/>
+            <img src="./images/glasses/red.webp"/>
+            <img src="./images/glasses/green.webp"/>
+            <img src="./images/glasses/yellow.webp"/>
           </div>
         </div>
         <div className="num-cont">
@@ -250,7 +250,7 @@ const App = () => {
       </section>
 
       <aside className="left">
-        <div className="btn" style={{backgroundImage: "url('/images/navigation/arrow.svg')"}} onClick={slide} data-slide="up"></div>
+        <div className="btn" style={{backgroundImage: "url('./images/navigation/arrow.svg')"}} onClick={slide} data-slide="up"></div>
         <div className="nav">{
           colors.map((item, i) => (
             <div key={i}>
@@ -265,13 +265,13 @@ const App = () => {
             </div>
           ))
         }</div>
-        <div className="btn" style={{backgroundImage: "url('/images/navigation/arrow.svg')"}} onClick={slide} data-slide="down"></div>
+        <div className="btn" style={{backgroundImage: "url('./images/navigation/arrow.svg')"}} onClick={slide} data-slide="down"></div>
       </aside>
 
       <aside className="right">
         <div className="cont">
           <input type="checkbox" id="chooseColorNav"/>
-          <label htmlFor="chooseColorNav"><img src="/images/navigation/arrow.svg"/><div>Choose a color</div></label>
+          <label htmlFor="chooseColorNav"><img src="./images/navigation/arrow.svg"/><div>Choose a color</div></label>
           <div className="colorsCont">{
             colorsNames.map((color, i) => (
               <div key={i}>
