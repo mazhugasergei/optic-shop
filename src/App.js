@@ -292,9 +292,9 @@ const App = () => {
 
       <section className="navigation wrapper">
         <div className="line"></div>
-        <div className="btn-outline" style={{backgroundImage: "url('/images/navigation/arrow.svg')"}} onClick={slide} data-slide="up"></div>
+        <div className="btn-outline" style={{backgroundImage: "url('./images/navigation/arrow.svg')"}} onClick={slide} data-slide="up"></div>
         <a className="btn" href="/">Get Yours</a>
-        <div className="btn-outline" style={{backgroundImage: "url('/images/navigation/arrow.svg')"}} onClick={slide} data-slide="down"></div>
+        <div className="btn-outline" style={{backgroundImage: "url('./images/navigation/arrow.svg')"}} onClick={slide} data-slide="down"></div>
         <div className="line"></div>
       </section>
     </>
