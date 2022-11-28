@@ -1,0 +1,10 @@
+:root{
+  --wrapper-padding: 25px;
+}
+
+.wrapper{
+  width: 100%;
+  max-width: 74.375rem;
+  padding-inline: var(--wrapper-padding);
+  margin-inline: auto;
+}

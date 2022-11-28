@@ -1,0 +1,118 @@
+aside{
+  @media (max-width: 480px){ display: none; }
+  position: absolute;
+  top: 50%;
+
+  &.left{
+    left: 0;
+    transform: translate(-300%, -50%);
+    margin-inline-start: 2.6rem;
+    .nav{
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      gap: 0.5rem;
+      margin-block: 1.2rem;
+      input{
+        display: none;
+        &:checked + label{
+          opacity: 1;
+        }
+      }
+      label{
+        display: block;
+        width: 0.625rem;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        background: #000;
+        opacity: .4;
+      }
+    }
+    .btn{
+      cursor: pointer;
+      width: 1.6875rem;
+      height: 3.1875rem;
+      border-top: 1px solid rgb(#000, 0.4);
+      background-size: 32%;
+      opacity: 0.6;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: 0.4s;
+      &:nth-child(1){
+        transform: rotate(180deg);
+      }
+      &:hover{
+        opacity: 1;
+        border-color: #000;
+        transition: 0.2s;
+      }
+    }
+  }
+
+  &.right{
+    position: absolute;
+    right: 0;
+    transform: translate(200%, -50%);
+    .cont{
+      display: flex;
+      input{
+        display: none;
+      }
+      input + label{
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: min(8.75vw, 4.375rem);
+        background: #fff;
+        margin-inline-end: 0.0625rem;
+        img{
+          position: absolute;
+          top: 50%;
+          left: .4rem;
+          width: min(1.6vw, .8rem);
+          transform: rotate(90deg) translateX(-50%);
+          transition: .2s;
+        }
+        div{
+          text-transform: uppercase;
+          font-size: min(2.1667vw, 1rem);
+          transform: rotate(-90deg);
+          white-space: nowrap;
+        }
+      }
+      .colorsCont{
+        background: #fff;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        // gap: min(minmax(0, 2vw), .8rem);
+        gap: clamp(0rem, 1.5vw, .8rem);
+        padding: min(5vw, 2.6rem);
+        div{
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: 1.5rem;
+          label{
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: min(2.0834vw, 0.9375rem);
+            color: #00000099;
+            &:hover{
+              color: #000;
+            }
+          }
+          .color{
+            flex-shrink: 0;
+            border-radius: 50%;
+            width: min(2.0834vw, 0.9375rem);
+            aspect-ratio: 1/1;
+          }
+        }
+      }
+    }
+  }
+
+}
