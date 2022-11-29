@@ -3,8 +3,8 @@
   position: absolute;
   bottom: 0;
   left: 50%;
-  height: 13.334vw;
-  @media (min-width: 480px){ height: min(9.375vw, 4.5rem); }
+  height: min(13.334vw, 13.334vh);
+  @media (min-width: 480px){ height: min(min(9.375vw, 4.5rem), min(9.375vh, 4.5rem)); }
   display: flex;
   @media (min-width: 480px){ align-items: center; }
   justify-content: center;
@@ -16,13 +16,14 @@
     height: 100%;
     aspect-ratio: 116/40;
     @media (min-width: 480px){ aspect-ratio: 198/60; }
+    @media (min-width: 780px){ aspect-ratio: 241/55; }
     background: #000;
     border: 1px solid transparent;
     text-transform: uppercase;
     font-weight: 700;
     color: #fff;
-    font-size: 3vw;
-    @media (min-width: 480px){ font-size: min(1.875vw, 0.9375rem); }
+    font-size: min(3vw, 3vh);
+    @media (min-width: 480px){ font-size: min(min(1.875vw, 0.9375rem), min(1.875vh, 0.9375rem)); }
     transition: .2s;
     &:hover{
       background: none;

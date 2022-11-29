@@ -1,5 +1,5 @@
 :root{
-  --wrapper-padding: 25px;
+  --wrapper-padding: min(min(3vw, 25px), min(3vh, 25px));
 }
 
 .wrapper{

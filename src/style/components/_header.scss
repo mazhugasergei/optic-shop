@@ -16,13 +16,13 @@ header{
     nav{
       display: flex;
       justify-content: center;
-      gap: 6.2vw;
-      @media (min-width: 480px){ gap: min(4vw, 3rem); }
+      gap: min(6.2vw, 6.2vh);
+      @media (min-width: 480px){ gap: min(min(4vw, 3rem), min(4vh, 3rem)); }
       a{
         text-transform: uppercase;
-        font-size: 2.667vw;
-        @media (min-width: 480px){ font-size: 1.667vw; }
-        @media (min-width: 840px){ font-size: 0.875rem; }
+        font-size: min(2.667vw, 1.5vh);
+        @media (min-width: 480px){ font-size: min(1.667vw, 1.5vh); }
+        @media (min-width: 840px){ font-size: min(0.875rem, 1.5vh); }
         letter-spacing: 1px;
         transition: .2s;
         @media (min-width: 480px){ transition: .4s; }
@@ -39,8 +39,7 @@ header{
     }
     .logo{
       padding: 0.2rem;
-      margin-block-start: 15px;
-      margin-block-end: 2.7vw;
+      margin: 15px 0 min(2.7vw, 2.7vh);
       @media (min-width: 480px){
         position: absolute;
         left: 50%;
@@ -49,9 +48,9 @@ header{
       }
       img{
         display: block;
-        width: 16.8vw;
+        width: min(16.8vw, 16.8vh);
         @media (min-width: 480px){
-          width: 10.2083vw;
+          width: min(10.2083vw, 10.2083vh);
           max-width: 80px !important;
         }
         transition: .2s;

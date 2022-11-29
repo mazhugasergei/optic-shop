@@ -8,7 +8,7 @@ a {
 }
 
 :root {
-  --wrapper-padding: 25px;
+  --wrapper-padding: min(min(3vw, 25px), min(3vh, 25px));
 }
 
 .wrapper {
@@ -65,16 +65,16 @@ header .wrapper {
 header .wrapper nav {
   display: flex;
   justify-content: center;
-  gap: 6.2vw;
+  gap: min(6.2vw, 6.2vh);
 }
 @media (min-width: 480px) {
   header .wrapper nav {
-    gap: min(4vw, 3rem);
+    gap: min(min(4vw, 3rem), min(4vh, 3rem));
   }
 }
 header .wrapper nav a {
   text-transform: uppercase;
-  font-size: 2.667vw;
+  font-size: min(2.667vw, 1.5vh);
   letter-spacing: 1px;
   transition: 0.2s;
   padding: 0.2rem;
@@ -82,12 +82,12 @@ header .wrapper nav a {
 }
 @media (min-width: 480px) {
   header .wrapper nav a {
-    font-size: 1.667vw;
+    font-size: min(1.667vw, 1.5vh);
   }
 }
 @media (min-width: 840px) {
   header .wrapper nav a {
-    font-size: 0.875rem;
+    font-size: min(0.875rem, 1.5vh);
   }
 }
 @media (min-width: 480px) {
@@ -104,10 +104,7 @@ header .wrapper nav a:nth-child(1):hover {
 }
 header .wrapper .logo {
   padding: 0.2rem;
-  -webkit-margin-before: 15px;
-          margin-block-start: 15px;
-  -webkit-margin-after: 2.7vw;
-          margin-block-end: 2.7vw;
+  margin: 15px 0 min(2.7vw, 2.7vh);
 }
 @media (min-width: 480px) {
   header .wrapper .logo {
@@ -119,12 +116,12 @@ header .wrapper .logo {
 }
 header .wrapper .logo img {
   display: block;
-  width: 16.8vw;
+  width: min(16.8vw, 16.8vh);
   transition: 0.2s;
 }
 @media (min-width: 480px) {
   header .wrapper .logo img {
-    width: 10.2083vw;
+    width: min(10.2083vw, 10.2083vh);
     max-width: 80px !important;
   }
 }
@@ -172,7 +169,7 @@ header .wrapper .logo:hover img {
 }
 .main .headline-cont .text span {
   font-family: "Quattrocento";
-  font-size: min(7.334vw, 2.3125rem);
+  font-size: min(min(7.334vw, 2.3125rem), min(7.334vh, 2.3125rem));
 }
 .main .glasses-cont {
   opacity: 0;
@@ -188,7 +185,7 @@ header .wrapper .logo:hover img {
   line-height: 1.7;
   color: #fff;
   font-weight: 900;
-  font-size: min(13.8vw, 9.2375rem);
+  font-size: min(min(13.8vw, 9.2375rem), min(13.8vh, 9.2375rem));
   -webkit-animation: breathing 10s ease infinite;
           animation: breathing 10s ease infinite;
 }
@@ -221,7 +218,7 @@ header .wrapper .logo:hover img {
   height: 100%;
   display: flex;
   justify-content: center;
-  gap: min(8.8vw, 5.8rem);
+  gap: min(min(8.8vw, 5.8rem), min(8.8vh, 5.8rem));
 }
 .main .glasses-cont .lenses .lense {
   overflow: hidden;
@@ -283,10 +280,10 @@ header .wrapper .logo:hover img {
 }
 .main .num-cont .text span {
   display: block;
-  font-size: min(3vw, 0.75rem);
+  font-size: min(min(3vw, 0.75rem), min(3vh, 0.75rem));
   font-weight: 700;
   letter-spacing: 1px;
-  margin-bottom: 2vw;
+  margin-bottom: min(2vw, 1vh);
 }
 .main .paragraph-cont {
   overflow: hidden;
@@ -295,18 +292,18 @@ header .wrapper .logo:hover img {
   margin-inline: auto;
 }
 .main .paragraph-cont .text span {
-  font-size: 3.334vw;
+  font-size: min(3.334vw, 3.334vh);
   line-height: 1.4;
   color: rgba(0, 0, 0, 0.6);
 }
 @media (min-width: 480px) {
   .main .paragraph-cont .text span {
-    font-size: 2.2917vw;
+    font-size: min(2.2917vw, 2.2917vh);
   }
 }
 @media (min-width: 740px) {
   .main .paragraph-cont .text span {
-    font-size: 1.0625rem;
+    font-size: min(1.0625rem, 1.9vh);
   }
 }
 
@@ -382,7 +379,7 @@ aside.right .cont input + label {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: min(8.75vw, 4.375rem);
+  width: min(min(8.75vw, 4.375rem), min(8.75vh, 4.375rem));
   background: #fff;
   -webkit-margin-end: 0.0625rem;
           margin-inline-end: 0.0625rem;
@@ -391,13 +388,13 @@ aside.right .cont input + label img {
   position: absolute;
   top: 50%;
   left: 0.4rem;
-  width: min(1.6vw, 0.8rem);
+  width: min(min(1.6vw, 0.8rem), min(1.6vh, 0.8rem));
   transform: rotate(90deg) translateX(-50%);
   transition: 0.2s;
 }
 aside.right .cont input + label div {
   text-transform: uppercase;
-  font-size: min(2.1667vw, 1rem);
+  font-size: min(min(2.1667vw, 1rem), min(2.1667vh, 1rem));
   transform: rotate(-90deg);
   white-space: nowrap;
 }
@@ -406,28 +403,26 @@ aside.right .cont .colorsCont {
   display: flex;
   flex-flow: column;
   justify-content: space-between;
-  gap: clamp(0rem, 1.5vw, 0.8rem);
-  padding: min(5vw, 2.6rem);
-}
-aside.right .cont .colorsCont div {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 1.5rem;
+  padding: min(min(5vw, 2.6rem, min(5vh, 2.6rem)));
 }
 aside.right .cont .colorsCont div label {
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: min(min(3vw, 1.5rem), min(3vh, 1.5rem));
   text-transform: uppercase;
-  font-size: min(2.0834vw, 0.9375rem);
+  font-size: min(min(2.0834vw, 0.9375rem), min(2.0834vh, 0.9375rem));
   color: rgba(0, 0, 0, 0.6);
+  padding-block: min(min(0.8vw, 0.45rem), min(0.8vh, 0.45rem));
 }
 aside.right .cont .colorsCont div label:hover {
   color: #000;
 }
-aside.right .cont .colorsCont div .color {
+aside.right .cont .colorsCont div label .color {
   flex-shrink: 0;
   border-radius: 50%;
-  width: min(2.0834vw, 0.9375rem);
+  width: min(min(2.0834vw, 0.9375rem), min(2.0834vh, 0.9375rem));
   aspect-ratio: 1/1;
 }
 
@@ -436,14 +431,14 @@ aside.right .cont .colorsCont div .color {
   position: absolute;
   bottom: 0;
   left: 50%;
-  height: 13.334vw;
+  height: min(13.334vw, 13.334vh);
   display: flex;
   justify-content: center;
   margin-bottom: calc(var(--wrapper-padding) * 2);
 }
 @media (min-width: 480px) {
   .navigation {
-    height: min(9.375vw, 4.5rem);
+    height: min(min(9.375vw, 4.5rem), min(9.375vh, 4.5rem));
   }
 }
 @media (min-width: 480px) {
@@ -461,7 +456,7 @@ aside.right .cont .colorsCont div .color {
   text-transform: uppercase;
   font-weight: 700;
   color: #fff;
-  font-size: 3vw;
+  font-size: min(3vw, 3vh);
   transition: 0.2s;
 }
 @media (min-width: 480px) {
@@ -469,9 +464,14 @@ aside.right .cont .colorsCont div .color {
     aspect-ratio: 198/60;
   }
 }
+@media (min-width: 780px) {
+  .navigation .btn {
+    aspect-ratio: 241/55;
+  }
+}
 @media (min-width: 480px) {
   .navigation .btn {
-    font-size: min(1.875vw, 0.9375rem);
+    font-size: min(min(1.875vw, 0.9375rem), min(1.875vh, 0.9375rem));
   }
 }
 .navigation .btn:hover {

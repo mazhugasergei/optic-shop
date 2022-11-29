@@ -27,7 +27,7 @@
     .text{
       span{
         font-family: "Quattrocento";
-        font-size: min(7.334vw, 2.3125rem);
+        font-size: min(min(7.334vw, 2.3125rem), min(7.334vh, 2.3125rem));
       }
     }
   }
@@ -47,7 +47,7 @@
         line-height: 1.7;
         color: #fff;
         font-weight: 900;
-        font-size: min(13.8vw, 9.2375rem);
+        font-size: min(min(13.8vw, 9.2375rem), min(13.8vh, 9.2375rem));
         animation: breathing 10s ease infinite;
         @keyframes breathing {
           0%{ transform: translateY(-8%); }
@@ -64,7 +64,7 @@
       height: 100%;
       display: flex;
       justify-content: center;
-      gap: min(8.8vw, 5.8rem);
+      gap: min(min(8.8vw, 5.8rem), min(8.8vh, 5.8rem));
       .lense{
         overflow: hidden;
         height: 100%;
@@ -121,10 +121,10 @@
       gap: 1rem;
       span{
         display: block;
-        font-size: min(3vw, .75rem);
+        font-size: min(min(3vw, .75rem), min(3vh, .75rem));
         font-weight: 700;
         letter-spacing: 1px;
-        margin-bottom: 2vw;
+        margin-bottom: min(2vw, 1vh);
       }
     }
   }
@@ -136,9 +136,9 @@
     margin-inline: auto;
     .text{
       span{
-        font-size: 3.334vw;
-        @media (min-width: 480px){ font-size: 2.2917vw; }
-        @media (min-width: 740px){ font-size: 1.0625rem; }
+        font-size: min(3.334vw, 3.334vh);
+        @media (min-width: 480px){ font-size: min(2.2917vw, 2.2917vh); }
+        @media (min-width: 740px){ font-size: min(1.0625rem, 1.9vh); }
         line-height: 1.4;
         color: rgb(#000, 0.6);
       }

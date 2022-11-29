@@ -215,7 +215,7 @@ const App = () => {
             <a href="/">About</a>
             <a href="/">Contact</a>
           </nav>
-          <a className="logo" href="/"><img src="./images/logo.svg" alt="logo"/></a>
+          <a className="logo" href="/"><img src="./images/logo.svg"/></a>
         </div>
       </header>
 
@@ -282,8 +282,10 @@ const App = () => {
                     setPreviousSlide(currentSlide)
                     setCurrentSlide(i)
                   }
-                }>{ color }</label>
-                <div className="color" style={{background: colorsNav[i]}}></div>
+                }>
+                  <span>{ color }</span>
+                  <div className="color" style={{background: colorsNav[i]}}/>
+                </label>
               </div>
             ))
           }</div>

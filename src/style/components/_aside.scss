@@ -64,20 +64,20 @@ aside{
         display: flex;
         align-items: center;
         justify-content: center;
-        width: min(8.75vw, 4.375rem);
+        width: min(min(8.75vw, 4.375rem), min(8.75vh, 4.375rem));
         background: #fff;
         margin-inline-end: 0.0625rem;
         img{
           position: absolute;
           top: 50%;
           left: .4rem;
-          width: min(1.6vw, .8rem);
+          width: min(min(1.6vw, .8rem), min(1.6vh, .8rem));
           transform: rotate(90deg) translateX(-50%);
           transition: .2s;
         }
         div{
           text-transform: uppercase;
-          font-size: min(2.1667vw, 1rem);
+          font-size: min(min(2.1667vw, 1rem), min(2.1667vh, 1rem));
           transform: rotate(-90deg);
           white-space: nowrap;
         }
@@ -87,28 +87,28 @@ aside{
         display: flex;
         flex-flow: column;
         justify-content: space-between;
-        // gap: min(minmax(0, 2vw), .8rem);
-        gap: clamp(0rem, 1.5vw, .8rem);
-        padding: min(5vw, 2.6rem);
+        padding: min(min(5vw, 2.6rem, min(5vh, 2.6rem)));
         div{
-          display: flex;
-          align-items: center;
-          justify-content: flex-end;
-          gap: 1.5rem;
           label{
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: min(min(3vw, 1.5rem), min(3vh, 1.5rem));
             text-transform: uppercase;
-            font-size: min(2.0834vw, 0.9375rem);
+            font-size: min(min(2.0834vw, 0.9375rem), min(2.0834vh, 0.9375rem));
             color: #00000099;
+            // padding-block: min(.8vw);
+            padding-block: min(min(.8vw, .45rem), min(.8vh, .45rem));
             &:hover{
               color: #000;
             }
-          }
-          .color{
-            flex-shrink: 0;
-            border-radius: 50%;
-            width: min(2.0834vw, 0.9375rem);
-            aspect-ratio: 1/1;
+            .color{
+              flex-shrink: 0;
+              border-radius: 50%;
+              width: min(min(2.0834vw, 0.9375rem), min(2.0834vh, 0.9375rem));
+              aspect-ratio: 1/1;
+            }
           }
         }
       }
