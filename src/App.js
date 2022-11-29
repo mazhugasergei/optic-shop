@@ -123,7 +123,7 @@ const App = () => {
     // bottom navigation appearing
     document.querySelector('section.navigation').style.transition = transition/1000 + "s"
     document.querySelector('section.navigation').style.transitionDelay = transition/2000 + "s"
-    document.querySelector('section.navigation').style.transform = "translate(0)"
+    document.querySelector('section.navigation').style.transform = "translate(-50%, 0)"
     // set glasses-cont style
     document.querySelector('.glasses-cont').style.transition = transition/2000 + "s"
     document.querySelector('.glasses-cont').style.transitionDelay = transition/10000 + "s" 

@@ -224,6 +224,7 @@ header .wrapper .logo:hover img {
   gap: min(8.8vw, 5.8rem);
 }
 .main .glasses-cont .lenses .lense {
+  overflow: hidden;
   height: 100%;
   aspect-ratio: 1/1;
   -webkit-clip-path: circle(50%);
@@ -431,7 +432,10 @@ aside.right .cont .colorsCont div .color {
 }
 
 .navigation {
-  transform: translateY(200%);
+  transform: translate(-50%, 200%);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
   height: 13.334vw;
   display: flex;
   justify-content: center;
@@ -539,4 +543,5 @@ body {
   display: flex;
   flex-flow: column;
   justify-content: space-between;
+  -webkit-justify-content: space-between;
 }/*# sourceMappingURL=index.css.map */

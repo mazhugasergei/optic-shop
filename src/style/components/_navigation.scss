@@ -1,11 +1,15 @@
 .navigation{
-  transform: translateY(200%);
+  transform: translate(-50%, 200%);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
   height: 13.334vw;
   @media (min-width: 480px){ height: min(9.375vw, 4.5rem); }
   display: flex;
   @media (min-width: 480px){ align-items: center; }
   justify-content: center;
   margin-bottom: calc(var(--wrapper-padding) * 2);
+
   .btn{
     display: grid;
     place-items: center;
