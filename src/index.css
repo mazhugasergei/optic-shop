@@ -47,9 +47,11 @@ header .wrapper {
   flex-flow: column;
   align-items: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  padding: var(--wrapper-padding);
-  -webkit-padding-after: calc(var(--wrapper-padding) * 0.4);
-          padding-block-end: calc(var(--wrapper-padding) * 0.4);
+  -webkit-padding-before: min(8.3334vw, 8.3334vh);
+          padding-block-start: min(8.3334vw, 8.3334vh);
+  padding-inline: 0;
+  -webkit-padding-after: min(3.3334vw, 3.3334vh);
+          padding-block-end: min(3.3334vw, 3.3334vh);
 }
 @media (min-width: 480px) {
   header .wrapper {
@@ -58,7 +60,7 @@ header .wrapper {
 }
 @media (min-width: 480px) {
   header .wrapper {
-    padding-block: calc(var(--wrapper-padding) * 1.7);
+    padding-block: min(1.5625rem, 5.20834vh);
     padding-inline: 0;
   }
 }
@@ -104,7 +106,7 @@ header .wrapper nav a:nth-child(1):hover {
 }
 header .wrapper .logo {
   padding: 0.2rem;
-  margin: 15px 0 min(2.7vw, 2.7vh);
+  margin: min(5vw, 5vh) 0 min(2.7vw, 2.7vh);
 }
 @media (min-width: 480px) {
   header .wrapper .logo {
