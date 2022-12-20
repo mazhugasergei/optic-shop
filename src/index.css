@@ -332,10 +332,19 @@ aside.left .nav {
   margin-block: 1.2rem;
 }
 aside.left .nav input {
-  display: none;
+  opacity: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  position: absolute;
 }
 aside.left .nav input:checked + label {
   opacity: 1;
+}
+aside.left .nav input:focus-visible + label {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
 }
 aside.left .nav label {
   display: block;

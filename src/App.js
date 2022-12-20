@@ -254,14 +254,14 @@ const App = () => {
         <div className="nav">{
           colors.map((item, i) => (
             <div key={i}>
-              <input type="radio" name="nav" id={"nav_" + i} defaultChecked = { i==0 ? "checked" : "" }/>
-              <label htmlFor={"nav_" + i} onClick={
-                (e)=>{
+              <input type="radio" name="nav" id={"nav_" + i} defaultChecked = { i==0 ? "checked" : "" }
+                onChange={(e)=>{
                   if(currentSlide > i) setSlideDirection("up")
                   else setSlideDirection("down")
                   setCurrentSlide(i)
-                }
-              }></label>
+                }}
+              />
+              <label htmlFor={"nav_" + i}></label>
             </div>
           ))
         }</div>
