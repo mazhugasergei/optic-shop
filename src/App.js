@@ -274,7 +274,7 @@ const App = () => {
 
       <aside className="right">
         <div className="cont">
-          <input type="checkbox" id="chooseColorNav" aria-label="Click to open colors menu"/>
+          <input type="checkbox" id="chooseColorNav" aria-label="Click to open or close colors menu"/>
           <label htmlFor="chooseColorNav">
             <img src="./images/navigation/arrow.svg" aria-hidden="hidden"/>
             <div aria-hidden="hidden">Choose a color</div>
