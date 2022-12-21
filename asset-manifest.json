@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/optic-shop/static/css/main.24e1256d.css",
-    "main.js": "/optic-shop/static/js/main.5c726901.js",
+    "main.css": "/optic-shop/static/css/main.1de2d5c8.css",
+    "main.js": "/optic-shop/static/js/main.9880269c.js",
     "static/js/787.e1f9a85f.chunk.js": "/optic-shop/static/js/787.e1f9a85f.chunk.js",
     "index.html": "/optic-shop/index.html",
-    "main.24e1256d.css.map": "/optic-shop/static/css/main.24e1256d.css.map",
-    "main.5c726901.js.map": "/optic-shop/static/js/main.5c726901.js.map",
+    "main.1de2d5c8.css.map": "/optic-shop/static/css/main.1de2d5c8.css.map",
+    "main.9880269c.js.map": "/optic-shop/static/js/main.9880269c.js.map",
     "787.e1f9a85f.chunk.js.map": "/optic-shop/static/js/787.e1f9a85f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.24e1256d.css",
-    "static/js/main.5c726901.js"
+    "static/css/main.1de2d5c8.css",
+    "static/js/main.9880269c.js"
   ]
 }
