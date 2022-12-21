@@ -7,6 +7,12 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  @mixin focus {
+    outline: .125rem solid #222;
+    outline-offset: .125rem;
+  }
+  &:focus-visible{ @include focus() }
+  &:focus-visible + label{ @include focus() }
 }
 
 html{
@@ -14,7 +20,6 @@ html{
 }
 
 body{
-  user-select: none;
   overflow: hidden;
   height: 100%;
   display: flex;

@@ -155,10 +155,14 @@ const App = () => {
       if(e.target.checked){
         document.querySelector('aside.right').style.transform = "translate(0, -50%)"
         document.querySelector('aside.right img').style.transform = "rotate(270deg) translateX(50%)"
+        document.querySelectorAll('aside.right button').forEach(btn => {btn.tabIndex = 0})
+        document.querySelectorAll('aside.right button').forEach(btn => {btn.ariaHidden = "visible"})
       }
       else{
         document.querySelector('aside.right').style.transform = "translate(" + (document.querySelector('aside.right .colorsCont').offsetWidth - 1) + "px, -50%)"
         document.querySelector('aside.right img').style.transform = "rotate(90deg) translateX(-50%)"
+        document.querySelectorAll('aside.right button').forEach(btn => {btn.tabIndex = -1})
+        document.querySelectorAll('aside.right button').forEach(btn => {btn.ariaHidden = "hidden"})
       }
     })
   }, [])
@@ -211,11 +215,11 @@ const App = () => {
       <header className="wrapper">
         <div className="wrapper">
           <nav>
-            <a href="/">Glasses</a>
-            <a href="/">About</a>
-            <a href="/">Contact</a>
+            <a href="/" aria-label="Glasses">Glasses</a>
+            <a href="/" aria-label="About">About</a>
+            <a href="/" aria-label="Contact">Contact</a>
           </nav>
-          <a className="logo" href="/"><img src="./images/logo.svg"/></a>
+          <a className="logo" href="/" aria-label="Optic Shop Logo"><img src="./images/logo.svg" aria-hidden="hidden" /></a>
         </div>
       </header>
 
@@ -223,7 +227,7 @@ const App = () => {
         <div className="headline-cont">
           <div className="text headline"><span></span></div>
         </div>
-        <div className="glasses-cont">
+        <div className="glasses-cont" aria-hidden="hidden">
           <div className="text glasses"><span></span></div>
           <div className="lenses">
             <div className="lense">
@@ -270,22 +274,28 @@ const App = () => {
 
       <aside className="right">
         <div className="cont">
-          <input type="checkbox" id="chooseColorNav"/>
-          <label htmlFor="chooseColorNav"><img src="./images/navigation/arrow.svg"/><div>Choose a color</div></label>
+          <input type="checkbox" id="chooseColorNav" aria-label="Click to open colors menu"/>
+          <label htmlFor="chooseColorNav">
+            <img src="./images/navigation/arrow.svg" aria-hidden="hidden"/>
+            <div aria-hidden="hidden">Choose a color</div>
+          </label>
           <div className="colorsCont">{
             colorsNames.map((color, i) => (
               <div key={i}>
-                <label htmlFor="chooseColorNav" onClick={
-                  (e)=>{
-                    if(currentSlide > i) setSlideDirection("up")
-                    else setSlideDirection("down")
-                    setPreviousSlide(currentSlide)
-                    setCurrentSlide(i)
+                <button htmlFor="chooseColorNav" tabIndex="-1" aria-hidden="hidden"
+                  onClick={
+                    (e)=>{
+                      if(currentSlide > i) setSlideDirection("up")
+                      else setSlideDirection("down")
+                      setPreviousSlide(currentSlide)
+                      setCurrentSlide(i)
+                    }
                   }
-                }>
+                  aria-label={"Switch to " + color + " glasses"}
+                >
                   <span>{ color }</span>
                   <div className="color" style={{background: colorsNav[i]}}/>
-                </label>
+                </button>
               </div>
             ))
           }</div>
