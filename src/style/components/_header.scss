@@ -1,4 +1,6 @@
 header{
+  position: relative;
+  z-index: 999;
   transform: translateY(-100%);
   
   .wrapper{
