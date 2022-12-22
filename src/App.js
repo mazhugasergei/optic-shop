@@ -95,6 +95,21 @@ const App = () => {
     setCurrentSlide(currentSlide + 1)
   }
 
+  const rightMenu = (e)=>{
+    if(e.target.checked){
+      document.querySelector('aside.right').style.transform = "translate(0, -50%)"
+      document.querySelector('aside.right img').style.transform = "rotate(270deg) translateX(50%)"
+      document.querySelectorAll('aside.right button').forEach(btn => {btn.tabIndex = 0})
+      document.querySelectorAll('aside.right button').forEach(btn => {btn.ariaHidden = "visible"})
+    }
+    else{
+      document.querySelector('aside.right').style.transform = "translate(" + (document.querySelector('aside.right .colorsCont').offsetWidth - 1) + "px, -50%)"
+      document.querySelector('aside.right img').style.transform = "rotate(90deg) translateX(-50%)"
+      document.querySelectorAll('aside.right button').forEach(btn => {btn.tabIndex = -1})
+      document.querySelectorAll('aside.right button').forEach(btn => {btn.ariaHidden = "hidden"})
+    }
+  }
+
   useEffect(()=>{
     // bg appearing
     document.querySelectorAll('.bg').forEach(bg => {
@@ -150,21 +165,15 @@ const App = () => {
       glasses.style.transition = transition/2000 + "s"
       glasses.style.transitionDelay = transition/6000 + "s"
     })
-    // set right navigation event listener
-    document.querySelector('aside.right input').addEventListener("change", (e)=>{
-      if(e.target.checked){
-        document.querySelector('aside.right').style.transform = "translate(0, -50%)"
-        document.querySelector('aside.right img').style.transform = "rotate(270deg) translateX(50%)"
-        document.querySelectorAll('aside.right button').forEach(btn => {btn.tabIndex = 0})
-        document.querySelectorAll('aside.right button').forEach(btn => {btn.ariaHidden = "visible"})
-      }
-      else{
-        document.querySelector('aside.right').style.transform = "translate(" + (document.querySelector('aside.right .colorsCont').offsetWidth - 1) + "px, -50%)"
-        document.querySelector('aside.right img').style.transform = "rotate(90deg) translateX(-50%)"
-        document.querySelectorAll('aside.right button').forEach(btn => {btn.tabIndex = -1})
-        document.querySelectorAll('aside.right button').forEach(btn => {btn.ariaHidden = "hidden"})
+    // close right menu on outside click
+    document.addEventListener("click", (e)=>{
+      if(!document.querySelector('aside.right label').contains(e.target) && !document.querySelector('aside.right input').contains(e.target)){
+        document.querySelector('aside.right input').checked = false
+        rightMenu(e)
       }
     })
+    // set right navigation event listener
+    document.querySelector('aside.right input').addEventListener("change", rightMenu)
   }, [])
 
   useEffect(()=>{
