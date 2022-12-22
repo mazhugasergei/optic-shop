@@ -80,7 +80,6 @@ header .wrapper nav a {
   text-transform: uppercase;
   font-size: min(2.667vw, 1.5vh);
   letter-spacing: 1px;
-  transition: 0.2s;
   padding: 0.2rem;
   margin: -0.2rem;
 }
@@ -94,14 +93,8 @@ header .wrapper nav a {
     font-size: min(0.875rem, 1.5vh);
   }
 }
-@media (min-width: 480px) {
-  header .wrapper nav a {
-    transition: 0.4s;
-  }
-}
 header .wrapper nav a:hover {
   transform: scale(110%);
-  transition: 0.04s;
 }
 header .wrapper nav a:nth-child(1):hover {
   transform: scaleX(110%);
@@ -536,10 +529,28 @@ aside.right .cont .colorsCont div button .color {
 *:focus-visible {
   outline: 0.125rem solid #222;
   outline-offset: 0.125rem;
+  transition: outline 0s, transform 0.2s !important;
+}
+@media (min-width: 480px) {
+  *:focus-visible {
+    transition: outline 0s, transform 0.4s !important;
+  }
+}
+*:focus-visible:hover {
+  transition: outline 0s, transform 0.04s !important;
 }
 *:focus-visible + label {
   outline: 0.125rem solid #222;
   outline-offset: 0.125rem;
+  transition: outline 0s, transform 0.2s !important;
+}
+@media (min-width: 480px) {
+  *:focus-visible + label {
+    transition: outline 0s, transform 0.4s !important;
+  }
+}
+*:focus-visible + label:hover {
+  transition: outline 0s, transform 0.04s !important;
 }
 
 html {
