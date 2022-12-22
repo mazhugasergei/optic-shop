@@ -96,7 +96,7 @@ const App = () => {
   }
 
   const rightMenu = (e)=>{
-    if(e.target.checked){
+    if(!document.querySelector('aside.left').contains(e.target) && e.target.checked){
       document.querySelector('aside.right').style.transform = "translate(0, -50%)"
       document.querySelector('aside.right img').style.transform = "rotate(270deg) translateX(50%)"
       document.querySelectorAll('aside.right button').forEach(btn => {btn.tabIndex = 0})
