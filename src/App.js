@@ -208,12 +208,14 @@ const App = () => {
   
   const slide = (e) => {
     if(e.target.dataset.slide == "up"){
-      setCurrentSlide(currentSlide - 1)
       setSlideDirection("up")
+      setCurrentSlide(currentSlide - 1)
+      document.querySelectorAll('aside input')[currentSlide].checked = false
     }
     if(e.target.dataset.slide == "down"){
-      setCurrentSlide(currentSlide + 1)
       setSlideDirection("down")
+      setCurrentSlide(currentSlide + 1)
+      document.querySelectorAll('aside input')[currentSlide].checked = false
     }
   }
 
