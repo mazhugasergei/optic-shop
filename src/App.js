@@ -110,7 +110,7 @@ const App = () => {
     }
   }
 
-  useEffect(()=>{
+  const onLoad = () => {
     // bg appearing
     document.querySelectorAll('.bg').forEach(bg => {
       bg.style.background = colors[currentSlide]
@@ -174,6 +174,15 @@ const App = () => {
     })
     // set right navigation event listener
     document.querySelector('aside.right input').addEventListener("change", rightMenu)
+  }
+
+  useEffect(()=>{
+    // onLoad
+    if(document.readyState === "complete") onLoad()
+    else{
+      window.addEventListener("load", onLoad)
+      return () => window.removeEventListener("load", onLoad)
+    }
   }, [])
 
   useEffect(()=>{
