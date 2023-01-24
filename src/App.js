@@ -141,9 +141,18 @@ const App = () => {
     document.querySelector('section.navigation').style.transform = "translate(-50%, 0)"
     // set glasses-cont style
     document.querySelector('.glasses-cont').style.transition = transition/2000 + "s"
-    document.querySelector('.glasses-cont').style.transitionDelay = transition/10000 + "s" 
+    document.querySelector('.glasses-cont').style.transitionDelay = transition/5000 + "s" 
     document.querySelector('.glasses-cont').style.transform = "translateY(0)"
     document.querySelector('.glasses-cont').style.opacity = 1
+  }
+
+  useEffect(()=>{
+    // onLoad
+    if(document.readyState === "complete") onLoad()
+    else{
+      window.addEventListener("load", onLoad)
+      return () => window.removeEventListener("load", onLoad)
+    }
     // set lenses style
     document.querySelectorAll('.lense').forEach(lense => {
       lense.style.transition = transition/3000 + "s"
@@ -174,18 +183,9 @@ const App = () => {
     })
     // set right navigation event listener
     document.querySelector('aside.right input').addEventListener("change", rightMenu)
-  }
-
-  useEffect(()=>{
-    // onLoad
-    if(document.readyState === "complete") onLoad()
-    else{
-      window.addEventListener("load", onLoad)
-      return () => window.removeEventListener("load", onLoad)
-    }
   }, [])
 
-  useEffect(()=>{
+  const onSlideChange = () => {
     // recalculate currentSlide
     if(currentSlide < 0) setCurrentSlide(4)
     else if(currentSlide > 4) setCurrentSlide(0)
@@ -212,6 +212,14 @@ const App = () => {
       }
       // change left nav bullet color
       document.querySelectorAll('aside input')[currentSlide].checked = true
+    }
+  }
+
+  useEffect(()=>{
+    if(document.readyState === "complete") onSlideChange()
+    else{
+      window.addEventListener("load", onSlideChange)
+      return () => window.removeEventListener("load", onSlideChange)
     }
   }, [currentSlide])
   
