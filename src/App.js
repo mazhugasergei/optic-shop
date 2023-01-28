@@ -139,25 +139,6 @@ const App = () => {
     document.querySelector('section.navigation').style.transition = transition/1000 + "s"
     document.querySelector('section.navigation').style.transitionDelay = transition/2000 + "s"
     document.querySelector('section.navigation').style.transform = "translate(-50%, 0)"
-    // set glasses-cont style
-    document.querySelector('.glasses-cont').style.transition = transition/2000 + "s"
-    document.querySelector('.glasses-cont').style.transitionDelay = transition/5000 + "s" 
-    document.querySelector('.glasses-cont').style.transform = "translateY(0)"
-    document.querySelector('.glasses-cont').style.opacity = 1
-  }
-
-  useEffect(()=>{
-    // onLoad
-    if(document.readyState === "complete") onLoad()
-    else{
-      window.addEventListener("load", onLoad)
-      return () => window.removeEventListener("load", onLoad)
-    }
-    // set lenses style
-    document.querySelectorAll('.lense').forEach(lense => {
-      lense.style.transition = transition/3000 + "s"
-      lense.style.transitionDelay = transition/5000 + "s"
-    })
     // set glasses text event listener
     window.addEventListener("mousemove", (e) => {
       document.querySelectorAll('.glasses-cont .text').forEach(text => {
@@ -174,6 +155,16 @@ const App = () => {
       glasses.style.transition = transition/2000 + "s"
       glasses.style.transitionDelay = transition/6000 + "s"
     })
+    // set lenses style
+    document.querySelectorAll('.lense').forEach(lense => {
+      lense.style.transition = transition/3000 + "s"
+      lense.style.transitionDelay = transition/5000 + "s"
+    })
+    // set glasses-cont style
+    document.querySelector('.glasses-cont').style.transition = transition/2000 + "s"
+    document.querySelector('.glasses-cont').style.transitionDelay = transition/5000 + "s" 
+    document.querySelector('.glasses-cont').style.transform = "translateY(0)"
+    document.querySelector('.glasses-cont').style.opacity = 1
     // close right menu on outside click
     document.addEventListener("click", (e)=>{
       if(!document.querySelector('aside.right label').contains(e.target) && !document.querySelector('aside.right input').contains(e.target)){
@@ -183,6 +174,15 @@ const App = () => {
     })
     // set right navigation event listener
     document.querySelector('aside.right input').addEventListener("change", rightMenu)
+  }
+
+  useEffect(()=>{
+    // onLoad
+    if(document.readyState === "complete") onLoad()
+    else{
+      window.addEventListener("load", onLoad)
+      return () => window.removeEventListener("load", onLoad)
+    }
   }, [])
 
   const onSlideChange = () => {
