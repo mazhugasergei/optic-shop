@@ -247,7 +247,7 @@ const App = () => {
             <a href="/" aria-label="About">About</a>
             <a href="/" aria-label="Contact">Contact</a>
           </nav>
-          <a className="logo" href="/" aria-label="Optic Shop Logo"><img src="./images/logo.svg" aria-hidden="hidden" /></a>
+          <a className="logo" href="/" aria-label="Optic Shop Logo"><img src="./images/logo.svg" aria-hidden="true" /></a>
         </div>
       </header>
 
@@ -255,7 +255,7 @@ const App = () => {
         <div className="headline-cont">
           <div className="text headline"><span></span></div>
         </div>
-        <div className="glasses-cont" aria-hidden="hidden">
+        <div className="glasses-cont" aria-hidden="true">
           <div className="text glasses"><span></span></div>
           <div className="lenses">
             <div className="lense">
@@ -304,13 +304,13 @@ const App = () => {
         <div className="cont">
           <input type="checkbox" id="chooseColorNav" aria-label="Click to open or close colors menu"/>
           <label htmlFor="chooseColorNav">
-            <img src="./images/navigation/arrow.svg" aria-hidden="hidden"/>
-            <div aria-hidden="hidden">Choose a color</div>
+            <img src="./images/navigation/arrow.svg" aria-hidden="true"/>
+            <div aria-hidden="true">Choose a color</div>
           </label>
           <div className="colorsCont">{
             colorsNames.map((color, i) => (
               <div key={i}>
-                <button htmlFor="chooseColorNav" tabIndex="-1" aria-hidden="hidden"
+                <button htmlFor="chooseColorNav" tabIndex="-1" aria-hidden="true"
                   onClick={
                     (e)=>{
                       if(currentSlide > i) setSlideDirection("up")
