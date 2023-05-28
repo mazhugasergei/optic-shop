@@ -247,7 +247,7 @@ const App = () => {
             <a href="/" aria-label="About">About</a>
             <a href="/" aria-label="Contact">Contact</a>
           </nav>
-          <a className="logo" href="/" aria-label="Optic Shop Logo"><img src="./images/logo.svg" aria-hidden="true" /></a>
+          <a className="logo" href="/" aria-label="Optic Shop Logo"><img src="@/images/logo.svg" aria-hidden="true" /></a>
         </div>
       </header>
 
@@ -266,11 +266,11 @@ const App = () => {
             </div>
           </div>
           <div className="images">
-            <img src="./images/glasses/black.webp"/>
-            <img src="./images/glasses/blue.webp"/>
-            <img src="./images/glasses/red.webp"/>
-            <img src="./images/glasses/green.webp"/>
-            <img src="./images/glasses/yellow.webp"/>
+            <img src="@/images/glasses/black.webp"/>
+            <img src="@/images/glasses/blue.webp"/>
+            <img src="@/images/glasses/red.webp"/>
+            <img src="@/images/glasses/green.webp"/>
+            <img src="@/images/glasses/yellow.webp"/>
           </div>
         </div>
         <div className="num-cont">
@@ -282,7 +282,7 @@ const App = () => {
       </section>
 
       <aside className="left">
-        <div className="btn" style={{backgroundImage: "url('./images/navigation/arrow.svg')"}} onClick={slide} data-slide="up"></div>
+        <div className="btn" style={{backgroundImage: "url('@/images/navigation/arrow.svg')"}} onClick={slide} data-slide="up"></div>
         <div className="nav">{
           colors.map((item, i) => (
             <div key={i}>
@@ -297,14 +297,14 @@ const App = () => {
             </div>
           ))
         }</div>
-        <div className="btn" style={{backgroundImage: "url('./images/navigation/arrow.svg')"}} onClick={slide} data-slide="down"></div>
+        <div className="btn" style={{backgroundImage: "url('@/images/navigation/arrow.svg')"}} onClick={slide} data-slide="down"></div>
       </aside>
 
       <aside className="right">
         <div className="cont">
           <input type="checkbox" id="chooseColorNav" aria-label="Click to open or close colors menu"/>
           <label htmlFor="chooseColorNav">
-            <img src="./images/navigation/arrow.svg" aria-hidden="true"/>
+            <img src="@/images/navigation/arrow.svg" aria-hidden="true"/>
             <div aria-hidden="true">Choose a color</div>
           </label>
           <div className="colorsCont">{
