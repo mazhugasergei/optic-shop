@@ -1,13 +1,20 @@
 {
   "files": {
-    "main.css": "/optic-shop/static/css/main.b69934b4.css",
-    "main.js": "/optic-shop/static/js/main.d3c402d9.js",
+    "main.css": "/optic-shop/static/css/main.80fdc89e.css",
+    "main.js": "/optic-shop/static/js/main.4460f6ef.js",
+    "static/media/black.webp": "/optic-shop/static/media/black.b9b59a980fa08de953af.webp",
+    "static/media/green.webp": "/optic-shop/static/media/green.af6fd7dfca3e8ab1a7ed.webp",
+    "static/media/blue.webp": "/optic-shop/static/media/blue.c7ea1c906b87df49a9c4.webp",
+    "static/media/red.webp": "/optic-shop/static/media/red.c6c05888ec2eea756277.webp",
+    "static/media/yellow.webp": "/optic-shop/static/media/yellow.8e4c11af83355f43f5c3.webp",
     "index.html": "/optic-shop/index.html",
-    "main.b69934b4.css.map": "/optic-shop/static/css/main.b69934b4.css.map",
-    "main.d3c402d9.js.map": "/optic-shop/static/js/main.d3c402d9.js.map"
+    "static/media/logo.svg": "/optic-shop/static/media/logo.da6aaa121aa8a3f8040051f33f523e1f.svg",
+    "static/media/arrow.svg": "/optic-shop/static/media/arrow.845feae4307c80a3ee943fbebdfcfd12.svg",
+    "main.80fdc89e.css.map": "/optic-shop/static/css/main.80fdc89e.css.map",
+    "main.4460f6ef.js.map": "/optic-shop/static/js/main.4460f6ef.js.map"
   },
   "entrypoints": [
-    "static/css/main.b69934b4.css",
-    "static/js/main.d3c402d9.js"
+    "static/css/main.80fdc89e.css",
+    "static/js/main.4460f6ef.js"
   ]
 }
