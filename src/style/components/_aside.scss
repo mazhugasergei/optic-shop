@@ -34,19 +34,21 @@ aside{
       cursor: pointer;
       width: 1.6875rem;
       height: 3.1875rem;
+      display: flex;
+      justify-content: center;
       border-top: 1px solid rgb(#000, 0.4);
-      background-size: 32%;
-      opacity: 0.6;
-      background-position: center;
-      background-repeat: no-repeat;
-      transition: 0.4s;
-      &:nth-child(1){
-        transform: rotate(180deg);
-      }
+      opacity: .6;
+      transition: .4s;
+      &:nth-child(1){ transform: rotate(180deg); }
       &:hover{
         opacity: 1;
         border-color: #000;
-        transition: 0.2s;
+        transition: .2s;
+      }
+      svg{
+        pointer-events: none;
+        width: 32%;
+        height: 100%;
       }
     }
   }
@@ -71,11 +73,12 @@ aside{
         width: min(min(8.75vw, 4.375rem), min(8.75vh, 4.375rem));
         background: #fff;
         margin-inline-end: 0.0625rem;
-        img{
+        svg{
           position: absolute;
           top: 50%;
           left: .4rem;
           width: min(min(1.6vw, .8rem), min(1.6vh, .8rem));
+          height: min(min(1.6vw, .8rem), min(1.6vh, .8rem));
           transform: rotate(90deg) translateX(-50%);
           transition: .2s;
         }

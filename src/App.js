@@ -1,7 +1,14 @@
 import { useEffect, useState } from "react"
+// images
+import { ReactComponent as Logo } from "./images/logo.svg"
+import { ReactComponent as ArrowIcon } from "./images/navigation/arrow.svg"
+import blackGlasses from "./images/glasses/black.webp"
+import blueGlasses from "./images/glasses/blue.webp"
+import redGlasses from "./images/glasses/red.webp"
+import greenGlasses from "./images/glasses/green.webp"
+import yellowGlasses from "./images/glasses/yellow.webp"
 
 const App = () => {
-  
   const transition = 700
   const [previousSlide, setPreviousSlide] = useState(0)
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -98,13 +105,13 @@ const App = () => {
   const rightMenu = (e)=>{
     if(!document.querySelector('aside.left').contains(e.target) && e.target.checked){
       document.querySelector('aside.right').style.transform = "translate(0, -50%)"
-      document.querySelector('aside.right img').style.transform = "rotate(270deg) translateX(50%)"
+      document.querySelector('aside.right svg').style.transform = "rotate(270deg) translateX(50%)"
       document.querySelectorAll('aside.right button').forEach(btn => {btn.tabIndex = 0})
       document.querySelectorAll('aside.right button').forEach(btn => {btn.ariaHidden = "visible"})
     }
     else{
       document.querySelector('aside.right').style.transform = "translate(" + (document.querySelector('aside.right .colorsCont').offsetWidth - 1) + "px, -50%)"
-      document.querySelector('aside.right img').style.transform = "rotate(90deg) translateX(-50%)"
+      document.querySelector('aside.right svg').style.transform = "rotate(90deg) translateX(-50%)"
       document.querySelectorAll('aside.right button').forEach(btn => {btn.tabIndex = -1})
       document.querySelectorAll('aside.right button').forEach(btn => {btn.ariaHidden = "hidden"})
     }
@@ -247,7 +254,7 @@ const App = () => {
             <a href="/" aria-label="About">About</a>
             <a href="/" aria-label="Contact">Contact</a>
           </nav>
-          <a className="logo" href="/" aria-label="Optic Shop Logo"><img src="./images/logo.svg" aria-hidden="true" /></a>
+          <a className="logo" href="/" aria-label="Optic Shop Logo"><Logo aria-hidden="true" /></a>
         </div>
       </header>
 
@@ -266,11 +273,11 @@ const App = () => {
             </div>
           </div>
           <div className="images">
-            <img src="./images/glasses/black.webp"/>
-            <img src="./images/glasses/blue.webp"/>
-            <img src="./images/glasses/red.webp"/>
-            <img src="./images/glasses/green.webp"/>
-            <img src="./images/glasses/yellow.webp"/>
+            <img src={blackGlasses}/>
+            <img src={blueGlasses}/>
+            <img src={redGlasses}/>
+            <img src={greenGlasses}/>
+            <img src={yellowGlasses}/>
           </div>
         </div>
         <div className="num-cont">
@@ -282,7 +289,7 @@ const App = () => {
       </section>
 
       <aside className="left">
-        <div className="btn" style={{backgroundImage: "url('./images/navigation/arrow.svg')"}} onClick={slide} data-slide="up"></div>
+        <div className="btn" onClick={slide} data-slide="up"><ArrowIcon /></div>
         <div className="nav">{
           colors.map((item, i) => (
             <div key={i}>
@@ -297,14 +304,14 @@ const App = () => {
             </div>
           ))
         }</div>
-        <div className="btn" style={{backgroundImage: "url('./images/navigation/arrow.svg')"}} onClick={slide} data-slide="down"></div>
+        <div className="btn" onClick={slide} data-slide="down"><ArrowIcon /></div>
       </aside>
 
       <aside className="right">
         <div className="cont">
           <input type="checkbox" id="chooseColorNav" aria-label="Click to open or close colors menu"/>
           <label htmlFor="chooseColorNav">
-            <img src="./images/navigation/arrow.svg" aria-hidden="true"/>
+            <ArrowIcon aria-hidden="true"/>
             <div aria-hidden="true">Choose a color</div>
           </label>
           <div className="colorsCont">{

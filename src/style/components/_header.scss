@@ -46,7 +46,7 @@ header{
         transform: translateX(-50%);
         margin: 0;
       }
-      img{
+      svg{
         display: block;
         width: min(16.8vw, 16.8vh);
         @media (min-width: 480px){
@@ -56,7 +56,7 @@ header{
         transition: .2s;
         @media (min-width: 480px){ transition: .4s; }
       }
-      &:hover img{
+      &:hover svg{
         transform: scaleX(120%);
         transition: .04s;
       }

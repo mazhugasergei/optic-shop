@@ -111,23 +111,23 @@ header .wrapper .logo {
     margin: 0;
   }
 }
-header .wrapper .logo img {
+header .wrapper .logo svg {
   display: block;
   width: min(16.8vw, 16.8vh);
   transition: 0.2s;
 }
 @media (min-width: 480px) {
-  header .wrapper .logo img {
+  header .wrapper .logo svg {
     width: min(10.2083vw, 10.2083vh);
     max-width: 80px !important;
   }
 }
 @media (min-width: 480px) {
-  header .wrapper .logo img {
+  header .wrapper .logo svg {
     transition: 0.4s;
   }
 }
-header .wrapper .logo:hover img {
+header .wrapper .logo:hover svg {
   transform: scaleX(120%);
   transition: 0.04s;
 }
@@ -172,7 +172,6 @@ header .wrapper .logo:hover img {
   transform: translateY(-20%);
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   position: relative;
   width: 100%;
@@ -186,19 +185,7 @@ header .wrapper .logo:hover img {
   color: #fff;
   font-weight: 900;
   font-size: min(min(13.8vw, 9.2375rem), min(13.8vh, 9.2375rem));
-  -webkit-animation: breathing 10s ease infinite;
-          animation: breathing 10s ease infinite;
-}
-@-webkit-keyframes breathing {
-  0% {
-    transform: translateY(-8%);
-  }
-  50% {
-    transform: translateY(8%);
-  }
-  100% {
-    transform: translateY(-8%);
-  }
+  animation: breathing 10s ease infinite;
 }
 @keyframes breathing {
   0% {
@@ -349,11 +336,10 @@ aside.left .btn {
   cursor: pointer;
   width: 1.6875rem;
   height: 3.1875rem;
+  display: flex;
+  justify-content: center;
   border-top: 1px solid rgba(0, 0, 0, 0.4);
-  background-size: 32%;
   opacity: 0.6;
-  background-position: center;
-  background-repeat: no-repeat;
   transition: 0.4s;
 }
 aside.left .btn:nth-child(1) {
@@ -363,6 +349,11 @@ aside.left .btn:hover {
   opacity: 1;
   border-color: #000;
   transition: 0.2s;
+}
+aside.left .btn svg {
+  pointer-events: none;
+  width: 32%;
+  height: 100%;
 }
 aside.right {
   position: absolute;
@@ -388,11 +379,12 @@ aside.right .cont input + label {
   -webkit-margin-end: 0.0625rem;
           margin-inline-end: 0.0625rem;
 }
-aside.right .cont input + label img {
+aside.right .cont input + label svg {
   position: absolute;
   top: 50%;
   left: 0.4rem;
   width: min(min(1.6vw, 0.8rem), min(1.6vh, 0.8rem));
+  height: min(min(1.6vw, 0.8rem), min(1.6vh, 0.8rem));
   transform: rotate(90deg) translateX(-50%);
   transition: 0.2s;
 }
