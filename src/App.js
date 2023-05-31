@@ -1,12 +1,17 @@
+// react
 import { useEffect, useState } from "react"
+// components
+import BG from "./components/BG"
+import Header from "./components/Header"
+import NavRight from "./components/NavRight"
+import NavLeft from "./components/NavLeft"
+import CTA from "./components/CTA"
 // images
-import { ReactComponent as Logo } from "./images/logo.svg"
-import { ReactComponent as ArrowIcon } from "./images/navigation/arrow.svg"
-import blackGlasses from "./images/glasses/black.webp"
-import blueGlasses from "./images/glasses/blue.webp"
-import redGlasses from "./images/glasses/red.webp"
-import greenGlasses from "./images/glasses/green.webp"
-import yellowGlasses from "./images/glasses/yellow.webp"
+import blackGlasses from "./assets/images/glasses/black.webp"
+import blueGlasses from "./assets/images/glasses/blue.webp"
+import redGlasses from "./assets/images/glasses/red.webp"
+import greenGlasses from "./assets/images/glasses/green.webp"
+import yellowGlasses from "./assets/images/glasses/yellow.webp"
 
 const App = () => {
   const transition = 700
@@ -102,50 +107,7 @@ const App = () => {
     setCurrentSlide(currentSlide + 1)
   }
 
-  const rightMenu = (e)=>{
-    if(!document.querySelector('aside.left').contains(e.target) && e.target.checked){
-      document.querySelector('aside.right').style.transform = "translate(0, -50%)"
-      document.querySelector('aside.right svg').style.transform = "rotate(270deg) translateX(50%)"
-      document.querySelectorAll('aside.right button').forEach(btn => {btn.tabIndex = 0})
-      document.querySelectorAll('aside.right button').forEach(btn => {btn.ariaHidden = "visible"})
-    }
-    else{
-      document.querySelector('aside.right').style.transform = "translate(" + (document.querySelector('aside.right .colorsCont').offsetWidth - 1) + "px, -50%)"
-      document.querySelector('aside.right svg').style.transform = "rotate(90deg) translateX(-50%)"
-      document.querySelectorAll('aside.right button').forEach(btn => {btn.tabIndex = -1})
-      document.querySelectorAll('aside.right button').forEach(btn => {btn.ariaHidden = "hidden"})
-    }
-  }
-
   const onLoad = () => {
-    // bg appearing
-    document.querySelectorAll('.bg').forEach(bg => {
-      bg.style.background = colors[currentSlide]
-      setTimeout(()=>{
-        bg.style.transition = transition/1000 + "s"
-        bg.style.transform = "translateY(0)"
-      })
-      setTimeout(()=>{ bg.style.transition = "0s" }, transition)
-    })
-    // header appearing
-    document.querySelector('header').style.transition = transition/1000 + "s"
-    document.querySelector('header').style.transform = "translate(0)"
-    // left navigation appearing
-    document.querySelector('aside.left').style.transition = transition/1000 + "s"
-    document.querySelector('aside.left').style.transitionDelay = transition/4000 + "s"
-    document.querySelector('aside.left').style.transform = "translateY(-50%)"
-    // right navigation appearing
-    document.querySelector('aside.right').style.transition = transition/1000 + "s"
-    document.querySelector('aside.right').style.transitionDelay = transition/8000 + "s"
-    document.querySelector('aside.right').style.transform = "translate(" + (document.querySelector('aside.right .colorsCont').offsetWidth - 1) + "px, -50%)"
-    setTimeout(()=>{
-      document.querySelector('aside.right').style.transition = transition/2000 + "s cubic-bezier(.84, 0, .6, 1)"
-      document.querySelector('aside.right').style.transitionDelay = "0s"
-    }, transition)
-    // bottom navigation appearing
-    document.querySelector('section.navigation').style.transition = transition/1000 + "s"
-    document.querySelector('section.navigation').style.transitionDelay = transition/2000 + "s"
-    document.querySelector('section.navigation').style.transform = "translate(-50%, 0)"
     // set glasses text event listener
     window.addEventListener("mousemove", (e) => {
       document.querySelectorAll('.glasses-cont .text').forEach(text => {
@@ -172,15 +134,6 @@ const App = () => {
     document.querySelector('.glasses-cont').style.transitionDelay = transition/5000 + "s" 
     document.querySelector('.glasses-cont').style.transform = "translateY(0)"
     document.querySelector('.glasses-cont').style.opacity = 1
-    // close right menu on outside click
-    document.addEventListener("click", (e)=>{
-      if(!document.querySelector('aside.right label').contains(e.target) && !document.querySelector('aside.right input').contains(e.target)){
-        document.querySelector('aside.right input').checked = false
-        rightMenu(e)
-      }
-    })
-    // set right navigation event listener
-    document.querySelector('aside.right input').addEventListener("change", rightMenu)
   }
 
   useEffect(()=>{
@@ -218,7 +171,7 @@ const App = () => {
         setIsCalledToFalseTimeoutID(setTimeout(()=>{setIsCalled(false)}, transition*2))
       }
       // change left nav bullet color
-      document.querySelectorAll('aside input')[currentSlide].checked = true
+      document.querySelectorAll('aside.left input')[currentSlide].checked = true
     }
   }
 
@@ -234,29 +187,20 @@ const App = () => {
     if(e.target.dataset.slide == "up"){
       setSlideDirection("up")
       setCurrentSlide(currentSlide - 1)
-      document.querySelectorAll('aside input')[currentSlide].checked = false
+      document.querySelectorAll('aside.left input')[currentSlide].checked = false
     }
     if(e.target.dataset.slide == "down"){
       setSlideDirection("down")
       setCurrentSlide(currentSlide + 1)
-      document.querySelectorAll('aside input')[currentSlide].checked = false
+      document.querySelectorAll('aside.left input')[currentSlide].checked = false
     }
   }
 
   return (
     <>
-      <div className="bg"><div/></div>
+      <BG {...{transition, colors, currentSlide}} />
 
-      <header className="wrapper">
-        <div className="wrapper">
-          <nav>
-            <a href="/" aria-label="Glasses">Glasses</a>
-            <a href="/" aria-label="About">About</a>
-            <a href="/" aria-label="Contact">Contact</a>
-          </nav>
-          <a className="logo" href="/" aria-label="Optic Shop Logo"><Logo aria-hidden="true" /></a>
-        </div>
-      </header>
+      <Header transition={transition} />
 
       <section className="main">
         <div className="headline-cont">
@@ -288,62 +232,11 @@ const App = () => {
         </div>
       </section>
 
-      <aside className="left">
-        <div className="btn" onClick={slide} data-slide="up"><ArrowIcon /></div>
-        <div className="nav">{
-          colors.map((item, i) => (
-            <div key={i}>
-              <input type="radio" name="nav" id={"nav_" + i} defaultChecked = { i==0 ? "checked" : "" }
-                onChange={(e)=>{
-                  if(currentSlide > i) setSlideDirection("up")
-                  else setSlideDirection("down")
-                  setCurrentSlide(i)
-                }}
-              />
-              <label htmlFor={"nav_" + i}></label>
-            </div>
-          ))
-        }</div>
-        <div className="btn" onClick={slide} data-slide="down"><ArrowIcon /></div>
-      </aside>
+      <NavLeft {...{transition, slide, colors, currentSlide, setSlideDirection, setCurrentSlide}} />
 
-      <aside className="right">
-        <div className="cont">
-          <input type="checkbox" id="chooseColorNav" aria-label="Click to open or close colors menu"/>
-          <label htmlFor="chooseColorNav">
-            <ArrowIcon aria-hidden="true"/>
-            <div aria-hidden="true">Choose a color</div>
-          </label>
-          <div className="colorsCont">{
-            colorsNames.map((color, i) => (
-              <div key={i}>
-                <button htmlFor="chooseColorNav" tabIndex="-1" aria-hidden="true"
-                  onClick={
-                    (e)=>{
-                      if(currentSlide > i) setSlideDirection("up")
-                      else setSlideDirection("down")
-                      setPreviousSlide(currentSlide)
-                      setCurrentSlide(i)
-                    }
-                  }
-                  aria-label={"Switch to " + color + " glasses"}
-                >
-                  <span>{ color }</span>
-                  <div className="color" style={{background: colorsNav[i]}}/>
-                </button>
-              </div>
-            ))
-          }</div>
-        </div>
-      </aside>
+      <NavRight {...{transition, colorsNames, currentSlide, setSlideDirection, setPreviousSlide, setCurrentSlide, colorsNav}} />
 
-      <section className="navigation wrapper">
-        <div className="line"></div>
-        <div className="btn-outline" style={{backgroundImage: "url('./images/navigation/arrow.svg')"}} onClick={slide} data-slide="up"></div>
-        <a className="btn" href="/">Get Yours</a>
-        <div className="btn-outline" style={{backgroundImage: "url('./images/navigation/arrow.svg')"}} onClick={slide} data-slide="down"></div>
-        <div className="line"></div>
-      </section>
+      <CTA {...{transition, slide}} />
     </>
   )
 }
