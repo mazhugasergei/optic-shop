@@ -425,7 +425,7 @@ aside.right .cont .colorsCont div button .color {
   aspect-ratio: 1/1;
 }
 
-.cta {
+.navigation {
   transform: translate(-50%, 200%);
   position: absolute;
   bottom: 0;
@@ -436,16 +436,16 @@ aside.right .cont .colorsCont div button .color {
   margin-bottom: calc(var(--wrapper-padding) * 2);
 }
 @media (min-width: 480px) {
-  .cta {
+  .navigation {
     height: min(min(9.375vw, 4.5rem), min(9.375vh, 4.5rem));
   }
 }
 @media (min-width: 480px) {
-  .cta {
+  .navigation {
     align-items: center;
   }
 }
-.cta .btn {
+.navigation .btn {
   display: grid;
   place-items: center;
   height: 100%;
@@ -459,59 +459,56 @@ aside.right .cont .colorsCont div button .color {
   transition: 0.2s;
 }
 @media (min-width: 480px) {
-  .cta .btn {
+  .navigation .btn {
     aspect-ratio: 198/60;
   }
 }
 @media (min-width: 780px) {
-  .cta .btn {
+  .navigation .btn {
     aspect-ratio: 241/55;
   }
 }
 @media (min-width: 480px) {
-  .cta .btn {
+  .navigation .btn {
     font-size: min(min(1.875vw, 0.9375rem), min(1.875vh, 0.9375rem));
   }
 }
-.cta .btn:hover {
+.navigation .btn:hover {
   background: none;
   border-color: #000;
   color: #000;
   transition: 0.04s;
 }
-.cta .btn-outline {
+.navigation .btn-outline {
   cursor: pointer;
   aspect-ratio: 1/1;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border: 1px solid rgba(0, 0, 0, 0.3);
+  background-size: 15%;
+  background-position: center;
+  background-repeat: no-repeat;
   transition: 0.2s;
   border-left: 0;
 }
 @media (min-width: 480px) {
-  .cta .btn-outline {
+  .navigation .btn-outline {
     display: none;
   }
 }
-.cta .btn-outline:nth-child(2) {
+.navigation .btn-outline:nth-child(2) {
   transform: rotate(180deg);
 }
-.cta .btn-outline:hover {
+.navigation .btn-outline:hover {
   border-color: #000;
   transition: 0.04s;
 }
-.cta .btn-outline svg {
-  width: 15%;
-}
-.cta .line {
+.navigation .line {
   width: 100%;
   height: 1px;
   background: rgba(0, 0, 0, 0.2);
 }
 @media (max-width: 480px) {
-  .cta .line {
+  .navigation .line {
     display: none;
   }
 }

@@ -1,4 +1,4 @@
-.cta{
+.navigation{
   transform: translate(-50%, 200%);
   position: absolute;
   bottom: 0;
@@ -38,10 +38,10 @@
     cursor: pointer;
     aspect-ratio: 1/1;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border: 1px solid rgb(#000, 0.3);
+    background-size: 15%;
+    background-position: center;
+    background-repeat: no-repeat;
     transition: .2s;
     border-left: 0;
     &:nth-child(2){
@@ -50,9 +50,6 @@
     &:hover{
       border-color: #000;
       transition: .04s;
-    }
-    svg{
-      width: 15%;
     }
   }
 
